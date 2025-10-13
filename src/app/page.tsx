@@ -1,5 +1,8 @@
 // App.jsx
-import React from "react";
+"use client"
+
+import React, { useEffect, useRef, useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 const features = [
 	{
@@ -35,7 +38,48 @@ const testimonials = [
 	},
 ];
 
+const faqs = [
+	{
+		question: "Surveiller vos dépenses",
+		answer: "Suivez vos dépenses et recevez une alerte si vous dépassez votre objectif.",
+	},
+	{
+		question: "Atteindre vos objectifs",
+		answer: "Définissez un budget et suivez vos progrès pour atteindre vos objectifs facilement.",
+	},
+	{
+		question: "Investir intelligemment",
+		answer: "Investissez vos économies directement depuis l’app Flouzy en toute simplicité.",
+	},
+];
+
 export default function App() {
+	const [openIndex, setOpenIndex] = useState(0);
+	const [progress, setProgress] = useState(0);
+	const progressRef = useRef(0); // Référence stable pour l’interval
+
+	// Progression automatique
+	useEffect(() => {
+		const interval = setInterval(() => {
+			progressRef.current += 1;
+			setProgress(progressRef.current);
+
+			if (progressRef.current >= 100) {
+				progressRef.current = 0;
+				setProgress(0);
+				setOpenIndex((prevIndex) => (prevIndex + 1) % faqs.length);
+			}
+		}, 50);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	const handleClick = (index) => {
+		setOpenIndex(index);
+		progressRef.current = 0;
+		setProgress(0);
+	};
+
 	return (
 		<div className="font-sans bg-gray-50 text-gray-900">
 			{/* Hero */}
@@ -52,29 +96,57 @@ export default function App() {
 					>
 						Téléchargez l'app
 					</a>
-					
+
 				</div>
 			</header>
 
 			<section className="flex flex-row px-64 py-20">
 				{/* Information */}
 				<div>
-					<h2 className="text-3xl">Suivre vos dépenses et vos objectif</h2>
-					<p></p>
-					<div className="flex flex-col">
-						{/* faq */}
-						<div className="px-2 border border-neutral-300 rounded-lg text-neutral-600">
-							<h3 className="text-xl">Surveiller vos dépense</h3>
-							<p>
-								Suivez vos dépense et si vous dépasser votre objectif
-							</p>
-						</div>
+					<h2 className="text-3xl mb-4">Suivre vos dépenses et vos objectifs</h2>
+					<div className="flex flex-col space-y-4">
+						{faqs.map((faq, index) => {
+							const isOpen = openIndex === index;
+							return (
+								<div
+									key={index}
+									className="border border-neutral-300 rounded-lg bg-white shadow-sm cursor-pointer overflow-hidden"
+								>
+									{/* Barre de cooldown */}
+									<div className="w-full h-1 bg-gray-200">
+										<div
+											className="h-1 bg-blue-500 transition-all duration-50"
+											style={{ width: isOpen ? `${progress}%` : "0%" }}
+										/>
+									</div>
+
+									{/* Header */}
+									<div
+										className="flex justify-between items-center px-4 py-3"
+										onClick={() => handleClick(index)}
+									>
+										<h3 className="text-lg font-semibold">{faq.question}</h3>
+										<FaChevronDown
+											className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"
+												}`}
+										/>
+									</div>
+
+									{/* Contenu */}
+									<div
+										className={`px-4 pb-3 transition-all duration-300 overflow-hidden ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+											}`}
+									>
+										<p className="text-sm text-neutral-600">{faq.answer}</p>
+									</div>
+								</div>
+							);
+						})}
 					</div>
 				</div>
-				{/* Image (possibilité que elle change en fonction du faq) */}
-				<div>
 
-				</div>
+				{/* Image ou illustration */}
+				<div>{/* Ici tu peux mettre une image liée au FAQ */}</div>
 			</section>
 
 			{/* Features */}
