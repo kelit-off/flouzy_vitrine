@@ -56,15 +56,15 @@ export default function App() {
 				</div>
 			</header>
 
-			<section className="flex flex-row px-34 py-20">
+			<section className="flex flex-row px-64 py-20">
 				{/* Information */}
 				<div>
-					<h2>Suivre vos dépenses et vos objectif</h2>
+					<h2 className="text-3xl">Suivre vos dépenses et vos objectif</h2>
 					<p></p>
 					<div className="flex flex-col">
 						{/* faq */}
 						<div className="px-2 border border-neutral-300 rounded-lg text-neutral-600">
-							<h3>Surveiller vos dépense</h3>
+							<h3 className="text-xl">Surveiller vos dépense</h3>
 							<p>
 								Suivez vos dépense et si vous dépasser votre objectif
 							</p>
