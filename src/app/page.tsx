@@ -17,14 +17,16 @@ export default function Home() {
 						<span className="text-xl font-bold">Flouzy</span>
 					</div>
 					<div className="hidden md:flex items-center space-x-8">
-						<a href="#" className="text-gray-300 hover:text-white transition">À propos</a>
-						<a href="#" className="text-gray-300 hover:text-white transition">Fonctionnalités</a>
-						<a href="#" className="text-gray-300 hover:text-white transition">Tarifs</a>
-						<a href="#" className="text-gray-300 hover:text-white transition">Contact</a>
+						{/* <a href="#" className="text-gray-300 hover:text-white transition">À propos</a> */}
+						<a href="#fonctionnalites" className="text-gray-300 hover:text-white transition">Fonctionnalités</a>
+						{/* <a href="#" className="text-gray-300 hover:text-white transition">Tarifs</a> */}
+						{/* <a href="#" className="text-gray-300 hover:text-white transition">Contact</a> */}
 					</div>
-					<button className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition">
-						Commencer
-					</button>
+					<Link href={"https://app.flouzy.fr"}>
+						<button className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition">
+							Commencer
+						</button>
+					</Link>
 				</nav>
 			</header>
 
@@ -192,7 +194,7 @@ export default function Home() {
 			</section>
 
 			{/* Features Grid */}
-			<section className="py-20 px-6 bg-gray-800/30">
+			<section className="py-20 px-6 bg-gray-800/30" id='fonctionnalites'>
 				<div className="container mx-auto">
 					<div className="grid md:grid-cols-3 gap-8">
 						{[
@@ -373,7 +375,7 @@ export default function Home() {
 							</div>
 							<p className="text-gray-400 text-sm">Gérez vos finances intelligemment</p>
 						</div>
-						<div>
+						{/* <div>
 							<h4 className="font-semibold mb-4">ENTREPRISE</h4>
 							<ul className="space-y-2 text-gray-400 text-sm">
 								<li><a href="#" className="hover:text-white transition">À propos</a></li>
@@ -396,15 +398,15 @@ export default function Home() {
 								<li><a href="#" className="hover:text-white transition">Conditions</a></li>
 								<li><a href="#" className="hover:text-white transition">Cookies</a></li>
 							</ul>
-						</div>
+						</div> */}
 					</div>
 					<div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
 						<p className="text-gray-400 text-sm">© 2025 Flouzy. Tous droits réservés.</p>
-						<div className="flex gap-4 mt-4 md:mt-0">
+						{/* <div className="flex gap-4 mt-4 md:mt-0">
 							<a href="#" className="text-gray-400 hover:text-white transition">Confidentialité</a>
 							<a href="#" className="text-gray-400 hover:text-white transition">Conditions</a>
 							<a href="#" className="text-gray-400 hover:text-white transition">Cookies</a>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</footer>
