@@ -103,7 +103,7 @@ export default function Home() {
 							<p className="text-green-400 mb-4">INTELLIGENCE ARTIFICIELLE</p>
 							<p className="text-gray-300 leading-relaxed">
 								Notre IA analyse vos habitudes de dépenses et vous propose des recommandations personnalisées
-								pour économiser jusqu'à 30% sur votre budget mensuel.
+								pour économiser jusqu&apos;à 30% sur votre budget mensuel.
 							</p>
 						</div>
 						<div className="relative">
@@ -151,8 +151,8 @@ export default function Home() {
 						Visualisez Votre Situation<br />Financière en Temps Réel
 					</h2>
 					<p className="text-gray-400 mb-12 max-w-2xl mx-auto">
-						Un tableau de bord complet qui vous donne une vue d'ensemble de vos finances.
-						Suivez vos objectifs d'épargne, identifiez les dépenses excessives et prenez de meilleures décisions.
+						Un tableau de bord complet qui vous donne une vue d&apos;ensemble de vos finances.
+						Suivez vos objectifs d&apos;épargne, identifiez les dépenses excessives et prenez de meilleures décisions.
 					</p>
 
 					<div className="relative max-w-5xl mx-auto">
@@ -263,7 +263,7 @@ export default function Home() {
 												<span className="text-xs">🍕 Restaurant</span>
 												<span className="text-red-400 text-sm font-semibold">-45.50€</span>
 											</div>
-											<div className="text-xs text-gray-500">Aujourd'hui</div>
+											<div className="text-xs text-gray-500">Aujourd&apos;hui</div>
 										</div>
 										<div className="bg-gray-800 rounded-lg p-3 text-sm">
 											<div className="flex justify-between mb-1">
@@ -352,8 +352,8 @@ export default function Home() {
 			<section className="py-20 px-6">
 				<div className="container mx-auto text-center">
 					<div className="max-w-4xl mx-auto bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-12 border border-green-500/30">
-						<h2 className="text-5xl font-bold mb-6">Commencez à Économiser Dès Aujourd'hui</h2>
-						<p className="text-gray-300 mb-8">Rejoignez des milliers d'utilisateurs qui ont déjà économisé en moyenne 30% sur leurs dépenses</p>
+						<h2 className="text-5xl font-bold mb-6">Commencez à Économiser Dès Aujourd&apos;hui</h2>
+						<p className="text-gray-300 mb-8">Rejoignez des milliers d&apos;utilisateurs qui ont déjà économisé en moyenne 30% sur leurs dépenses</p>
 						<Link href={"https://app.flouzy.fr"}>
 							<button className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full text-lg font-semibold transition inline-flex items-center gap-2">
 								Essayer Gratuitement <FiArrowRight size={20} />
